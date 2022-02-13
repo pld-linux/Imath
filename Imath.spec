@@ -36,6 +36,7 @@ Summary(pl.UTF-8):	Pliki nagłówkowe bibliotek Imath
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	libstdc++-devel
+Requires:	llvm-mlir
 Requires:	zlib-devel
 
 %description devel
