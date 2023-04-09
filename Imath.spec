@@ -18,6 +18,7 @@ BuildRequires:	cmake >= 3.12
 BuildRequires:	libstdc++-devel
 BuildRequires:	ninja
 BuildRequires:	pkgconfig
+BuildRequires:	rpmbuild(macros) >= 1.736
 %if %{with python2}
 BuildRequires:	boost-python-devel
 BuildRequires:	python-devel >= 1:2.5
