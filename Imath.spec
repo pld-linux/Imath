@@ -19,12 +19,12 @@ BuildRequires:	libstdc++-devel
 BuildRequires:	ninja
 BuildRequires:	pkgconfig
 %if %{with python2}
-BuildRequires:	boost-python
+BuildRequires:	boost-python-devel
 BuildRequires:	python-devel >= 1:2.5
 BuildRequires:	python-numpy-devel
 %endif
 %if %{with python3}
-BuildRequires:	boost-python3
+BuildRequires:	boost-python3-devel
 BuildRequires:	python3-devel >= 1:3.2
 BuildRequires:	python3-numpy-devel
 %endif
