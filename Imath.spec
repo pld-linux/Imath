@@ -7,7 +7,7 @@ Summary:	High dynamic-range (HDR) image file format support libraries
 Summary(pl.UTF-8):	Biblioteki obsługujące format plików obrazu o wysokiej dynamice (HDR)
 Name:		Imath
 Version:	3.1.7
-Release:	1
+Release:	2
 License:	BSD
 Group:		Libraries
 #Source0Download: https://github.com/AcademySoftwareFoundation/imath/releases
