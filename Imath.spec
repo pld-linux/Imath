@@ -6,13 +6,13 @@
 Summary:	High dynamic-range (HDR) image file format support libraries
 Summary(pl.UTF-8):	Biblioteki obsługujące format plików obrazu o wysokiej dynamice (HDR)
 Name:		Imath
-Version:	3.1.7
-Release:	2
+Version:	3.1.9
+Release:	1
 License:	BSD
 Group:		Libraries
 #Source0Download: https://github.com/AcademySoftwareFoundation/imath/releases
 Source0:	https://github.com/AcademySoftwareFoundation/imath/archive/v%{version}/imath-%{version}.tar.gz
-# Source0-md5:	5cedab446ab296c080957c3037c6d097
+# Source0-md5:	97f1cbfb86b88ddfde42b7df1f1494db
 URL:		https://openexr.com/
 BuildRequires:	cmake >= 3.12
 BuildRequires:	libstdc++-devel
@@ -172,8 +172,8 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc CHANGES.md CONTRIBUTORS.md GOVERNANCE.md LICENSE.md README.md SECURITY.md
-%attr(755,root,root) %{_libdir}/libImath-3_1.so.30.*.*
-%ghost %{_libdir}/libImath-3_1.so.30
+%attr(755,root,root) %{_libdir}/libImath-3_1.so.*.*.*
+%ghost %{_libdir}/libImath-3_1.so.29
 
 %files devel
 %defattr(644,root,root,755)
@@ -189,7 +189,7 @@ rm -rf $RPM_BUILD_ROOT
 %files -n python-pyimath
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libPyImath_Python2_*-3_1.so.*.*.*
-%ghost %{_libdir}/libPyImath_Python2_*-3_1.so.30
+%ghost %{_libdir}/libPyImath_Python2_*-3_1.so.29
 %attr(755,root,root) %{py_sitedir}/imath.so
 %attr(755,root,root) %{py_sitedir}/imathnumpy.so
 
@@ -204,7 +204,7 @@ rm -rf $RPM_BUILD_ROOT
 %files -n python3-pyimath
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libPyImath_Python3_*-3_1.so.*.*.*
-%ghost %{_libdir}/libPyImath_Python3_*-3_1.so.30
+%ghost %{_libdir}/libPyImath_Python3_*-3_1.so.29
 %attr(755,root,root) %{py3_sitedir}/imath.so
 %attr(755,root,root) %{py3_sitedir}/imathnumpy.so
 
