@@ -6,13 +6,13 @@
 Summary:	High dynamic-range (HDR) image file format support libraries
 Summary(pl.UTF-8):	Biblioteki obsługujące format plików obrazu o wysokiej dynamice (HDR)
 Name:		Imath
-Version:	3.1.9
+Version:	3.1.11
 Release:	1
 License:	BSD
 Group:		Libraries
-#Source0Download: https://github.com/AcademySoftwareFoundation/imath/releases
-Source0:	https://github.com/AcademySoftwareFoundation/imath/archive/v%{version}/imath-%{version}.tar.gz
-# Source0-md5:	97f1cbfb86b88ddfde42b7df1f1494db
+#Source0Download: https://github.com/AcademySoftwareFoundation/Imath/releases
+Source0:	https://github.com/AcademySoftwareFoundation/Imath/archive/v%{version}/%{name}-%{version}.tar.gz
+# Source0-md5:	28c0e9971a8e6720112a8037837ff8e4
 URL:		https://openexr.com/
 BuildRequires:	cmake >= 3.12
 BuildRequires:	libstdc++-devel
