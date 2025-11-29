@@ -141,6 +141,7 @@ rm -rf $RPM_BUILD_ROOT
 %files -n python3-pyimath-devel
 %defattr(644,root,root,755)
 %{_libdir}/libPyImath_Python3_*-3_2.so
+%{_libdir}/libPyImath.so
 %{_includedir}/Imath/PyImath*.h
 %{_pkgconfigdir}/PyImath.pc
 %endif
