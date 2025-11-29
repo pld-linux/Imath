@@ -1,0 +1,33 @@
+--- Imath-3.2.2/src/python/PyImathNumpy/CMakeLists.txt~	2025-10-07 17:17:20.000000000 +0200
++++ Imath-3.2.2/src/python/PyImathNumpy/CMakeLists.txt	2025-11-29 12:36:16.336655705 +0100
+@@ -57,7 +57,7 @@
+   
+   if (NOT DEFINED PYTHON_INSTALL_DIR)
+ 
+-    set(PYTHON_INSTALL_DIR "lib/python${Python3_VERSION_MAJOR}.${Python3_VERSION_MINOR}/site-packages")
++	  set(PYTHON_INSTALL_DIR "${CMAKE_INSTALL_LIBDIR}/python${Python3_VERSION_MAJOR}.${Python3_VERSION_MINOR}/site-packages")
+     message(STATUS "installing ${PYIMATHNUMPY_MODULE} module to ${PYTHON_INSTALL_DIR}")
+ 
+   else()
+--- Imath-3.2.2/src/python/PyImath/CMakeLists.txt~	2025-10-07 17:17:20.000000000 +0200
++++ Imath-3.2.2/src/python/PyImath/CMakeLists.txt	2025-11-29 12:36:48.436655696 +0100
+@@ -213,7 +213,7 @@
+     # which allows an externally-set value to take effect.
+     #
+   
+-    set(PYTHON_INSTALL_DIR "lib/python${Python3_VERSION_MAJOR}.${Python3_VERSION_MINOR}/site-packages")
++    set(PYTHON_INSTALL_DIR "${CMAKE_INSTALL_LIBDIR}/python${Python3_VERSION_MAJOR}.${Python3_VERSION_MINOR}/site-packages")
+     message(STATUS "installing ${PYIMATH_MODULE_NAME} module to ${PYTHON_INSTALL_DIR}")
+ 
+   else()
+--- Imath-3.2.2/src/pybind11/PyBindImath/CMakeLists.txt~	2025-10-07 17:17:20.000000000 +0200
++++ Imath-3.2.2/src/pybind11/PyBindImath/CMakeLists.txt	2025-11-29 12:37:28.356655688 +0100
+@@ -128,7 +128,7 @@
+     # which allows an externally-set value to take effect.
+     #
+   
+-    set(PYTHON_INSTALL_DIR "lib/python${Python3_VERSION_MAJOR}.${Python3_VERSION_MINOR}/site-packages")
++    set(PYTHON_INSTALL_DIR "${CMAKE_INSTALL_LIBDIR}/python${Python3_VERSION_MAJOR}.${Python3_VERSION_MINOR}/site-packages")
+     message(STATUS "installing ${PYBINDIMATH_MODULE_NAME} to ${PYTHON_INSTALL_DIR}")
+ 
+   else()
