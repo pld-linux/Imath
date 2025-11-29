@@ -1,6 +1,5 @@
 #
 # Conditional build:
-%bcond_with	python2	# CPython 2.x binding
 %bcond_without	python3	# CPython 3.x binding
 
 Summary:	High dynamic-range (HDR) image file format support libraries
@@ -20,11 +19,6 @@ BuildRequires:	libstdc++-devel >= 6:5
 BuildRequires:	ninja
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.736
-%if %{with python2}
-BuildRequires:	boost-python-devel
-BuildRequires:	python-devel >= 1:2.5
-BuildRequires:	python-numpy-devel
-%endif
 %if %{with python3}
 BuildRequires:	boost-python3-devel
 BuildRequires:	python3-devel >= 1:3.2
@@ -124,21 +118,6 @@ Pliki nagłówkowe wiązań Pythona do biblioteki Imath.
 %patch -P0 -p1
 
 %build
-%if %{with python2}
-install -d build-py2
-cd build-py2
-%cmake -G Ninja \
-	-DCMAKE_INSTALL_INSTALLDIR=include \
-	-DCMAKE_INSTALL_LIBDIR=%{_lib} \
-	-DPYIMATH_OVERRIDE_PYTHON_INSTALL_DIR=%{py_sitedir} \
-	-DPYTHON=ON \
-	-DUSE_PYTHON2=ON \
-	..
-
-%ninja_build
-cd ..
-%endif
-
 install -d build
 cd build
 %cmake -G Ninja \
@@ -152,12 +131,6 @@ cd build
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
-%if %{with python2}
-%ninja_install -C build-py2
-
-%{__mv} $RPM_BUILD_ROOT%{_pkgconfigdir}/Py{,2}Imath.pc
-%endif
 
 %ninja_install -C build
 
@@ -188,22 +161,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/Imath/half*.h
 %{_libdir}/cmake/Imath
 %{_pkgconfigdir}/Imath.pc
-
-%if %{with python2}
-%files -n python-pyimath
-%defattr(644,root,root,755)
-%{_libdir}/libPyImath_Python2_*-3_2.so.*.*.*
-%ghost %{_libdir}/libPyImath_Python2_*-3_2.so.30
-%{_libdir}/libPyImath.so
-%attr(755,root,root) %{py_sitedir}/imath.so
-%attr(755,root,root) %{py_sitedir}/imathnumpy.so
-
-%files -n python-pyimath-devel
-%defattr(644,root,root,755)
-%{_libdir}/libPyImath_Python2_*-3_1.so
-%{_includedir}/Imath/PyImath*.h
-%{_pkgconfigdir}/Py2Imath.pc
-%endif
 
 %if %{with python3}
 %files -n python3-pyimath
