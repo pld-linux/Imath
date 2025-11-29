@@ -14,7 +14,7 @@ Source0:	https://github.com/AcademySoftwareFoundation/Imath/archive/v%{version}/
 # Source0-md5:	e29f25ce926ac53d8e0a52197299f61b
 Patch0:		python-install.patch
 URL:		https://openexr.com/
-BuildRequires:	cmake >= 3.12
+BuildRequires:	cmake >= 3.14
 BuildRequires:	libstdc++-devel >= 6:5
 BuildRequires:	ninja
 BuildRequires:	pkgconfig
@@ -89,16 +89,13 @@ Pliki nagłówkowe wiązań Pythona do biblioteki Imath.
 %patch -P0 -p1
 
 %build
-install -d build
-cd build
-%cmake -G Ninja \
+%cmake -B build -G Ninja \
 	-DCMAKE_INSTALL_INSTALLDIR=include \
 	-DCMAKE_INSTALL_LIBDIR=%{_lib} \
 	-DPYIMATH_OVERRIDE_PYTHON_INSTALL_DIR=%{py3_sitedir} \
-	%{?with_python3:-DPYTHON=ON} \
-	..
+	%{?with_python3:-DPYTHON=ON}
 
-%ninja_build
+%ninja_build -C build
 
 %install
 rm -rf $RPM_BUILD_ROOT
