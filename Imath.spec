@@ -55,35 +55,6 @@ Header files for Imath libraries.
 %description devel -l pl.UTF-8
 Pliki nagłówkowe bibliotek Imath.
 
-%package -n python-pyimath
-Summary:	Python 2 bindings for the Imath library
-Summary(pl.UTF-8):	Wiązania Pythona 2 do biblioteki Imath
-Group:		Libraries/Python
-Requires:	%{name} = %{version}-%{release}
-Obsoletes:	python-pyilmbase < 3
-
-%description -n python-pyimath
-The PyImath package provides Python bindings for the Imath library.
-
-%description -n python-pyimath -l pl.UTF-8
-Pakiet PyImath dostarcza wiązania Pythona do bibliotek Imath.
-
-%package -n python-pyimath-devel
-Summary:	Header files for Python 2 bindings for the Imath library
-Summary(pl.UTF-8):	Pliki nagłówkowe wiązań Pythona 2 do biblioteki Imath
-Group:		Development/Libraries
-Requires:	%{name}-devel = %{version}-%{release}
-Requires:	python-devel >= 1:2.5
-Requires:	python-pyimath = %{version}-%{release}
-Obsoletes:	pyilmbase-devel < 3
-Obsoletes:	python-pyilmbase-devel < 3
-
-%description -n python-pyimath-devel
-Header files for Python bindings for the Imath library.
-
-%description -n python-pyimath-devel -l pl.UTF-8
-Pliki nagłówkowe wiązań Pythona do biblioteki Imath.
-
 %package -n python3-pyimath
 Summary:	Python 3 bindings for the Imath library
 Summary(pl.UTF-8):	Wiązania Pythona 3 do biblioteki Imath
@@ -139,9 +110,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %post	-p /sbin/ldconfig
 %postun	-p /sbin/ldconfig
-
-%post	-n python-pyimath -p /sbin/ldconfig
-%postun	-n python-pyimath -p /sbin/ldconfig
 
 %post	-n python3-pyimath -p /sbin/ldconfig
 %postun	-n python3-pyimath -p /sbin/ldconfig
